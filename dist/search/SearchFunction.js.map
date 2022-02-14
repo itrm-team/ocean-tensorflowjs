@@ -1,0 +1,1 @@
+{"version":3,"file":"SearchFunction.js","sourceRoot":"","sources":["../../src/search/SearchFunction.ts"],"names":[],"mappings":";;;AACA,yDAAsD;AAItD,MAAsB,cAAqB,SAAQ,mBAAqB;IAEpE,YAAY,IAAY,EAAE,aAAuB;QAC7C,KAAK,CAAC,IAAI,EAAE,aAAa,aAAb,aAAa,cAAb,aAAa,GAAI,IAAI,CAAC,CAAC;IACvC,CAAC;IAMM,KAAK,CAAC,KAAe;QACxB,OAAO,IAAI,CAAC,KAAK,CAAC,KAAK,CAAC,CAAC;IAC7B,CAAC;CACJ;AAbD,wCAaC"}

@@ -1,4 +1,4 @@
 export interface AIModel<I, O> {
-    apply(input: I): Promise<O>;
-    save(path: string): Promise<any>;
+    apply(input: I): O | PromiseLike<O>;
+    save(path: string): any | PromiseLike<any>;
 }

@@ -9,11 +9,11 @@ export abstract class SearchFunction<T, R> extends Function<Space<T>, T> impleme
         super(name, deterministic ?? true);
     }
 
-    public abstract solve(space: Space<T>): T;
+    public abstract solve(space: Space<T>): T | PromiseLike<T>;
     public abstract getGoal(): Goal<T, R>;
     public abstract setGoal(goal: Goal<T, R>): void;
 
-    public apply(space: Space<T>): T {
+    public apply(space: Space<T>): T | PromiseLike<T> {
         return this.solve(space);
     }
 }

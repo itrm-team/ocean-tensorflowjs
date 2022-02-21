@@ -7,12 +7,5 @@ export abstract class Function<S, T> {
         this.deterministic = deterministic ?? true;
     }
 
-    public abstract apply(x: S): T;
-
-    public setApply(x: S[]): T[] {
-        let result: T[] = [];
-        for (let value of x)
-            result.push(this.apply(value));
-        return result;
-    }
+    public abstract apply(x: S): T | PromiseLike<T>;
 }

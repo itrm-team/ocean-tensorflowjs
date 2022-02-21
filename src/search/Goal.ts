@@ -1,22 +1,20 @@
 import { Function } from "../math/functions/Function";
 import { Order } from "../sort/Order";
 
-export abstract class Goal<T, R> extends Function<T, R> {
-    protected order: Order<R>;
+export abstract class Goal<T, P> extends Function<T, P> {
+    protected order: Order<P>;
 
-    constructor(name: string, order: Order<R>) {
+    constructor(name: string, order: Order<P>) {
         super(name);
         this.order = order;
     }
 
-    public getOrder(): Order<R> {
+    public getOrder(): Order<P> {
         return this.order;
     }
 
-    public abstract compute(x: T): R;
-
-    public compare(x: T, y: T) {
-        return this.order.compare(this.apply(x), this.apply(y));
+    public async compare(x: T, y: T): Promise<number> {
+        return this.order.compare(await this.apply(x), await this.apply(y));
     }
 
     public abstract init(): void;

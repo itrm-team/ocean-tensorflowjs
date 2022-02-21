@@ -6,12 +6,6 @@ class Function {
         this.name = name;
         this.deterministic = deterministic !== null && deterministic !== void 0 ? deterministic : true;
     }
-    setApply(x) {
-        let result = [];
-        for (let value of x)
-            result.push(this.apply(value));
-        return result;
-    }
 }
 exports.Function = Function;
 //# sourceMappingURL=Function.js.map

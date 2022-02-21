@@ -103,12 +103,10 @@ async  function  sample1() {
 	let  training = new  MultilayerPerceptronTraining(args, goal, compileArgs, fitArgs, iters);
 	let  model = await  training.apply();
 	console.log("> outputs:", outputs);
-	console.log("> predictions:", await  model.apply(inputs));
+	console.log("> predictions:", await model.apply(inputs));
 }
-  
 
 // create a new model specifing the model generation (extends Space or SequentialSpace for tensorflow) and Data parsing (extends DataParse)
-
 async  function  sample2() {
 
 	let  parser = new  MultilayerIOParser(2); // Extends DataParse
@@ -121,13 +119,10 @@ async  function  sample2() {
 	let  training = new  MultilevelSequentialTraining(goal, parser, compileArgs, fitArgs, iters);
 	let  model = await  training.apply(space);
 	console.log("> outputs:", outputs);
-	console.log("> predictions:", await  model.apply(inputs));
+	console.log("> predictions:", await model.apply(inputs));
 }
 
-  
-
 // create a new model and train it using the tensorflow functions
-
 async  function  sample3() {
 	let  parser = new  MultilayerIOParser(2);
 	let  space = new  MultiLayerPerceptronSpace({
@@ -146,7 +141,24 @@ async  function  sample3() {
 
 	let  predictions = await  model.apply(data);
 	console.log("> outputs:", outputs);
-	console.log("> predictions:", await  parser.restoreOutputs(predictions));
+	console.log("> predictions:", await parser.restoreOutputs(predictions));
+}
+
+// Personal network designed using tensorflow layer definitions
+async function sample4() {
+    // defining a personalized network in this case multilayer perceptron
+    let layers = [
+        tf.layers.dense({ units: args.inputs, inputShape: [ args.inputs ] }), // input layer
+        tf.layers.dense({ units: 20 }), // hidden layer 1
+        tf.layers.dense({ units: 20 }), // hidden layer 2
+        tf.layers.dense({ units: args.outputs }) // output layer
+    ];
+    let space = new SequentialSpace(layers);
+    let parser = new MultilayerIOParser(2);
+    let training = new MultilevelSequentialTraining(goal, parser, compileArgs, fitArgs, iters);
+    let model = await training.apply(space);
+    console.log("> outputs:", outputs);
+    console.log("> predictions:", await model.apply(inputs));
 }
 
 // this function defines which of sample do you want to run
@@ -154,6 +166,7 @@ async  function  run() {
 	await sample1();
 	await sample2();
 	await sample3();
+	await sample4();
 }
 
 run();

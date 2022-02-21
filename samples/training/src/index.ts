@@ -88,10 +88,28 @@ async function sample3() {
     console.log("> predictions:", await parser.restoreOutputs(predictions));
 }
 
+// Personal network designed using tensorflow layer definitions
+async function sample4() {
+    // defining a personalized network in this case multilayer perceptron
+    let layers = [
+        tf.layers.dense({ units: args.inputs, inputShape: [ args.inputs ] }), // input layer
+        tf.layers.dense({ units: 20 }), // hidden layer 1
+        tf.layers.dense({ units: 20 }), // hidden layer 2
+        tf.layers.dense({ units: args.outputs }) // output layer
+    ];
+    let space = new SequentialSpace(layers);
+    let parser = new MultilayerIOParser(2);
+    let training = new MultilevelSequentialTraining(goal, parser, compileArgs, fitArgs, iters);
+    let model = await training.apply(space);
+    console.log("> outputs:", outputs);
+    console.log("> predictions:", await model.apply(inputs));
+}
+
 async function run() {
     await sample1();
     await sample2();
     await sample3();
+    await sample4();
 }
 
 run();

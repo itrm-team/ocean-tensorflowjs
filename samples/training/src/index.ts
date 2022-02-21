@@ -1,6 +1,6 @@
 import * as tf from '@tensorflow/tfjs-node';
 import { MultiLayerPerceptronSpace, MultilayerPerceptronTraining, MultilevelSequentialTraining, MultilayerIOParser, SequentialSpace } from 'oceanai-js';
-import { ModelGoal } from './ModelGoal';
+import { ModelGoal } from '../ModelGoal';
 
 let inputs = [
     [ 0.1, 0.3, 0.4, 0.4 ],

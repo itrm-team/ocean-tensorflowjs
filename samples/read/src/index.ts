@@ -1,13 +1,13 @@
 import fs from 'fs';
-import { StandardCSVReader, GoogleAPIConnection, SpreadsheetConnection } from 'oceanai-js';
+import { JSONCSVReader, GoogleAPIConnection, SpreadsheetConnection } from 'oceanai-js';
 
 async function csvDataRead() {
-    let reader = new StandardCSVReader();
+    let reader = new JSONCSVReader();
     let result = await reader.read({
         file: './src/dataset.csv',
         separator: ','
     });
-    console.log("> result:", result);
+    console.log("> result:", result, result.rows.length);
 }
 
 function googleDataRead() {

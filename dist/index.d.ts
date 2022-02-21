@@ -13,3 +13,7 @@ export { MultilevelSequentialModel as MultilevelSequentialModel } from './ai/ten
 export { Order as Order } from './sort/Order';
 export { Dataset as Dataset } from './ai/train/Dataset';
 export { MultilayerPerceptronTraining as MultilayerPerceptronTraining } from './ai/tensorflow/models/multilayer/MultilayerPerceptronTraining';
+export { Reader as Reader } from './io/Reader';
+export { StandardCSVReader as StandardCSVReader, CSVArgs as CSVArgs, CSVResult as CSVResult } from './io/csv/SimpleCSVReader';
+export { GoogleAPIConnection as GoogleAPIConnection } from './io/google/GoogleAPIConnection';
+export { SpreadsheetConnection as SpreadsheetConnection, SheetDataRequestArgs as SheetDataRequestArgs } from './io/google/spreadsheets/SpreadsheetConnection';

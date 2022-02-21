@@ -112,8 +112,8 @@ async  function  sample1() {
 
 async  function  sample2() {
 
-	let  parser = new  MultilayerIOParser(2);
-	let  space = new  MultiLayerPerceptronSpace({
+	let  parser = new  MultilayerIOParser(2); // Extends DataParse
+	let  space = new  MultiLayerPerceptronSpace({ // Extends SequentialSpace
 		inputs:  4,
 		outputs:  2,
 		hidden: [20, 20]
@@ -127,7 +127,7 @@ async  function  sample2() {
 
   
 
-// create a new model training using the tensorflow functions
+// create a new model and train it using the tensorflow functions
 
 async  function  sample3() {
 	let  parser = new  MultilayerIOParser(2);
@@ -150,11 +150,11 @@ async  function  sample3() {
 	console.log("> predictions:", await  parser.restoreOutputs(predictions));
 }
 
-// this function defines what kind of sample do you want to run
+// this function defines which of sample do you want to run
 async  function  run() {
 	await sample1();
-	//await sample2();
-	//await sample3();
+	await sample2();
+	await sample3();
 }
 
 run();

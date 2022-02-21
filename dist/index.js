@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MultilayerPerceptronTraining = exports.Dataset = exports.MultilevelSequentialModel = exports.SequentialDataParser = exports.Shuffle = exports.MultilayerIOParser = exports.MultiLayerPerceptronSpace = exports.SequentialTraining = exports.SequentialSpace = exports.SequentialModel = exports.MultilevelSequentialTraining = exports.TrainingGoal = exports.Training = void 0;
+exports.SpreadsheetConnection = exports.GoogleAPIConnection = exports.StandardCSVReader = exports.MultilayerPerceptronTraining = exports.Dataset = exports.MultilevelSequentialModel = exports.SequentialDataParser = exports.Shuffle = exports.MultilayerIOParser = exports.MultiLayerPerceptronSpace = exports.SequentialTraining = exports.SequentialSpace = exports.SequentialModel = exports.MultilevelSequentialTraining = exports.TrainingGoal = exports.Training = void 0;
 var Training_1 = require("./ai/train/Training");
 Object.defineProperty(exports, "Training", { enumerable: true, get: function () { return Training_1.Training; } });
 var TrainingGoal_1 = require("./ai/train/TrainingGoal");
@@ -27,4 +27,10 @@ var Dataset_1 = require("./ai/train/Dataset");
 Object.defineProperty(exports, "Dataset", { enumerable: true, get: function () { return Dataset_1.Dataset; } });
 var MultilayerPerceptronTraining_1 = require("./ai/tensorflow/models/multilayer/MultilayerPerceptronTraining");
 Object.defineProperty(exports, "MultilayerPerceptronTraining", { enumerable: true, get: function () { return MultilayerPerceptronTraining_1.MultilayerPerceptronTraining; } });
+var SimpleCSVReader_1 = require("./io/csv/SimpleCSVReader");
+Object.defineProperty(exports, "StandardCSVReader", { enumerable: true, get: function () { return SimpleCSVReader_1.StandardCSVReader; } });
+var GoogleAPIConnection_1 = require("./io/google/GoogleAPIConnection");
+Object.defineProperty(exports, "GoogleAPIConnection", { enumerable: true, get: function () { return GoogleAPIConnection_1.GoogleAPIConnection; } });
+var SpreadsheetConnection_1 = require("./io/google/spreadsheets/SpreadsheetConnection");
+Object.defineProperty(exports, "SpreadsheetConnection", { enumerable: true, get: function () { return SpreadsheetConnection_1.SpreadsheetConnection; } });
 //# sourceMappingURL=index.js.map

@@ -21,7 +21,6 @@ This library is still in alpha state and you can expect running into problems. I
 - [🏗 Installation](#-installation)
 - [🏄 Quickstart](#-quickstart)
   - [Obtaining Ocean datasets](#obtaining-ocean-datasets)
-  - [Consume services](#consume-services)
   -  [📖 Learn More](#learn-more)
 - [🦑 Development](#-development)
 - [⬆️ Releases](#️-releases)
@@ -163,13 +162,55 @@ run();
 
 
 ### Obtaining Ocean datasets
-In here we will explain how to obtain OCEAN datasets using oceanai-js.
 
+In here we will explain how to obtain OCEAN datasets using oceanai-js. Because there are multiple forms in which the data is stored on ocean (files, google spreadsheets, urls) we
+implement classes that help you to manage this data.
 
-### Consume services
-In here we will explain how to consume OCEAN services using oceanai-js.
+```ts
+import fs from 'fs';
+import { StandardCSVReader, GoogleAPIConnection, SpreadsheetConnection } from 'oceanai-js';
 
+async function csvDataRead() {
+    let reader = new StandardCSVReader();
+    let result = await reader.read({
+        file: './src/dataset.csv',
+        separator: ','
+    });
+    console.log("> result:", result);
+}
 
+function googleDataRead() {
+    fs.readFile('./src/credentials.json', 'utf-8', async (err: any, content: any) => {
+        if (err)
+            return console.log('Error loading client secret file:', err);
+        let credentials = JSON.parse(content);
+        let spreadsheetId = '1VdP4j5cUXBwx8jV8c3FmVBEwP4VmtDxRHVRvEWhcx2A';
+        let google = new GoogleAPIConnection('./src/token.json', [
+            'https://www.googleapis.com/auth/spreadsheets'
+        ]);
+        let spreadsheets = new SpreadsheetConnection(google);
+        await spreadsheets.init(credentials.web);
+        let details = await spreadsheets.getSpreadsheetDetails(spreadsheetId);
+        console.log("> details:", details);
+        let data = await spreadsheets.getSheetData({
+            spreadsheetId: spreadsheetId,
+            sheet: 'data',
+            fromColumn: 'A',
+            toColum: 'E',
+            formRow: 1,
+            toRow: 401
+        });
+        console.log("> data:", data, data.length);
+    });
+}
+
+async function run() {
+    await csvDataRead();
+    await googleDataRead();
+}
+
+run();
+```
 
 ### 📖 Learn more
 

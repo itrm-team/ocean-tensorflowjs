@@ -1,6 +1,6 @@
 {
   "name": "oceanai-js",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Wrapper library that allows a direct integration between the Ocean marketplace and artificial intelligence tools like tensorflow",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

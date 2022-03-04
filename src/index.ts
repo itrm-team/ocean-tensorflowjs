@@ -39,9 +39,16 @@ export { Predicate as Predicate } from './math/functions/logic/Predicate';
 
 export { ForLoopCondition as ForLoopCondition } from './math/functions/logic/iterative/ForLoopCondition';
 
+export { Average as Average } from './math/functions/statistics/Average';
 export { R2 as R2 } from './math/functions/statistics/R2';
 export { RMSE as RMSE } from './math/functions/statistics/RMSE';
+export { StandardDeviation as StandardDeviation } from './math/functions/statistics/StandardDeviation';
 
+export { RandomGenerator as RandomGenerator } from './math/random/RandomGenerator';
+export { SimpleRandomGenerator as SimpleRandomGenerator } from './math/random/SimpleRandomGenerator';
+export { Roulette as Roulette } from './math/random/integer/Roulette';
+export { StandardRandomGenerator as StandardRandomGenerator } from './math/random/real/StandardRandomGenerator';
+export { StandardPowerLawGenerator as StandardPowerLawGenerator } from './math/random/real/StandardPowerLawGenerator';
 export { Shuffle as Shuffle } from './math/random/util/Shuffle';
 
 export { Goal as Goal } from './search/Goal';
@@ -55,3 +62,17 @@ export { Reversed as Reversed } from './sort/Reversed';
 export { Sorted as Sorted } from './sort/Sorted';
 
 export { RealOrder as RealOrder } from './sort/real/RealOrder';
+
+export { Dimension as Dimension } from './utils/structures/Dimension';
+export { DisjointSetUnion as DisjointSetUnion } from './utils/structures/DisjointSetUnion';
+export { Location as Location } from './utils/structures/Location';
+
+export { Variation as Variation } from './search/variate/Variation';
+export { Variation_1_m as Variation_1_m } from './search/variate/Variation_1_m';
+export { Variation_2_m as Variation_2_m } from './search/variate/Variation_2_m';
+export { Variation_4_m as Variation_4_m } from './search/variate/Variation_4_m';
+
+export { BasicGoalBased as BasicGoalBased } from './search/BasicGoalBased';
+export { Selection as Selection } from './search/select/Selection';
+export { GoalBasedSelection as GoalBasedSelection } from './search/select/GoalBasedSelection';
+export { Elitism as Elitism } from './search/select/Elitism';

@@ -26,6 +26,7 @@ export { KFoldCrossValidation as KFoldCrossValidation } from './ai/train/validat
 
 export { Reader as Reader} from './io/Reader';
 export { FileReader as FileReader} from './io/FileReader';
+export { Scanner as Scanner } from './io/Scanner';
 
 export { CSVReader as CSVReader, CSVArgs as CSVArgs } from './io/csv/CSVReader';
 export { JSONCSVReader as JSONCSVReader, JSONCSVResult as JSONCSVResult } from './io/csv/JSONCSVReader';
@@ -76,3 +77,13 @@ export { BasicGoalBased as BasicGoalBased } from './search/BasicGoalBased';
 export { Selection as Selection } from './search/select/Selection';
 export { GoalBasedSelection as GoalBasedSelection } from './search/select/GoalBasedSelection';
 export { Elitism as Elitism } from './search/select/Elitism';
+
+export { ActivationFunction as ActivationFunction } from './math/functions/ActivationFunction';
+export { BinaryStep as BinaryStep } from './math/functions/activation/BinaryStep';
+export { Exponential as Exponential } from './math/functions/activation/Exponential';
+export { Identity as Identity } from './math/functions/activation/Identity';
+export { LeakyReLU as LeakyReLU } from './math/functions/activation/LeakyReLU';
+export { ReLU as ReLU } from './math/functions/activation/ReLU';
+export { Sigmoid as Sigmoid } from './math/functions/activation/Sigmoid';
+export { Tanh as Tanh } from './math/functions/activation/Tanh';
+

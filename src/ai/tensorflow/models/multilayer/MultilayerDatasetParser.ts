@@ -1,7 +1,7 @@
 import * as tf from '@tensorflow/tfjs-node';
 import { SequentialDataParser } from "../../multilevel/SequentialDataParser";
 
-export class MultilayerIOParser extends SequentialDataParser<number[][], number[][]> {
+export class MultilayerDatasetParser extends SequentialDataParser<number[][], number[][]> {
     protected outputSize: number;
 
     constructor(outputSize: number) {

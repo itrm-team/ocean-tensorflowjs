@@ -15,7 +15,7 @@ export declare interface OceanDownloadRequest {
     serviceType: string,
     payerAddress: string,
     tokenAddress: string,
-    consumerAccount: Account,
+    //consumerAccount: Account,
     destination: string
 }
 
@@ -67,10 +67,10 @@ export class OceanConnection {
             "0.5;0.5;0.3;0.3;0.5;0.3\n" +
             "0.7;0.6;0.2;0.5;0.65;0.35";
         return new Promise((resolve, reject) => {
-            fs.writeFile(req.destination + "/dataset.csv", lines, function(err) {
+            fs.writeFile(req.destination + "dataset.csv", lines, function(err) {
                 if (err)
                     console.log(err);
-                resolve({});
+                resolve(lines);
             });
         });
     }

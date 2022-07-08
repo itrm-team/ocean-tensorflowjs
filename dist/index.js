@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Elitism = exports.GoalBasedSelection = exports.BasicGoalBased = exports.Variation_4_m = exports.Variation_2_m = exports.Variation_1_m = exports.Variation = exports.Location = exports.DisjointSetUnion = exports.Dimension = exports.RealOrder = exports.Sorted = exports.Reversed = exports.Space = exports.SearchFunction = exports.Goal = exports.Shuffle = exports.StandardPowerLawGenerator = exports.StandardRandomGenerator = exports.Roulette = exports.SimpleRandomGenerator = exports.StandardDeviation = exports.RMSE = exports.R2 = exports.Average = exports.ForLoopCondition = exports.Function = exports.SpreadsheetConnection = exports.GoogleAPIConnection = exports.JSONCSVReader = exports.CSVReader = exports.Scanner = exports.FileReader = exports.KFoldCrossValidation = exports.RealTrainingGoal = exports.MultilevelTraining = exports.MultilevelAIModel = exports.TrainingGoal = exports.Training = exports.Prospect = exports.Dataset = exports.SequentialDataParser = exports.MultilevelSequentialTraining = exports.MultilevelSequentialModel = exports.MultilayerPerceptronTraining = exports.MultiLayerPerceptronSpace = exports.MultilayerIOParser = exports.SequentialTraining = exports.SequentialSpace = exports.SequentialModel = void 0;
-exports.Tanh = exports.Sigmoid = exports.ReLU = exports.LeakyReLU = exports.Identity = exports.Exponential = exports.BinaryStep = void 0;
+exports.Elitism = exports.GoalBasedSelection = exports.BasicGoalBased = exports.Variation_4_m = exports.Variation_2_m = exports.Variation_1_m = exports.Variation = exports.Location = exports.DisjointSetUnion = exports.Dimension = exports.RealOrder = exports.Sorted = exports.Reversed = exports.Space = exports.SearchFunction = exports.Goal = exports.Shuffle = exports.StandardPowerLawGenerator = exports.StandardRandomGenerator = exports.Roulette = exports.SimpleRandomGenerator = exports.StandardDeviation = exports.RMSE = exports.R2 = exports.Average = exports.ForLoopCondition = exports.Function = exports.SpreadsheetConnection = exports.GoogleAPIConnection = exports.JSONCSVReader = exports.CSVReader = exports.Scanner = exports.FileReader = exports.KFoldCrossValidation = exports.RealTrainingGoal = exports.MultilevelTraining = exports.MultilevelAIModel = exports.TrainingGoal = exports.Training = exports.Prospect = exports.Dataset = exports.SequentialDataParser = exports.MultilevelSequentialTraining = exports.MultilevelSequentialModel = exports.MultilayerPerceptronTraining = exports.MultiLayerPerceptronSpace = exports.MultilayerDatasetParser = exports.SequentialTraining = exports.SequentialSpace = exports.SequentialModel = void 0;
+exports.ITRMConnection = exports.OceanConnection = exports.Tanh = exports.Sigmoid = exports.ReLU = exports.LeakyReLU = exports.Identity = exports.Exponential = exports.BinaryStep = void 0;
 var SequentialModel_1 = require("./ai/tensorflow/SequentialModel");
 Object.defineProperty(exports, "SequentialModel", { enumerable: true, get: function () { return SequentialModel_1.SequentialModel; } });
 var SequentialSpace_1 = require("./ai/tensorflow/SequentialSpace");
 Object.defineProperty(exports, "SequentialSpace", { enumerable: true, get: function () { return SequentialSpace_1.SequentialSpace; } });
 var SequentialTraining_1 = require("./ai/tensorflow/SequentialTraining");
 Object.defineProperty(exports, "SequentialTraining", { enumerable: true, get: function () { return SequentialTraining_1.SequentialTraining; } });
-var MultilayerIOParser_1 = require("./ai/tensorflow/models/multilayer/MultilayerIOParser");
-Object.defineProperty(exports, "MultilayerIOParser", { enumerable: true, get: function () { return MultilayerIOParser_1.MultilayerIOParser; } });
+var MultilayerDatasetParser_1 = require("./ai/tensorflow/models/multilayer/MultilayerDatasetParser");
+Object.defineProperty(exports, "MultilayerDatasetParser", { enumerable: true, get: function () { return MultilayerDatasetParser_1.MultilayerDatasetParser; } });
 var MultiLayerPerceptronSpace_1 = require("./ai/tensorflow/models/multilayer/MultiLayerPerceptronSpace");
 Object.defineProperty(exports, "MultiLayerPerceptronSpace", { enumerable: true, get: function () { return MultiLayerPerceptronSpace_1.MultiLayerPerceptronSpace; } });
 var MultilayerPerceptronTraining_1 = require("./ai/tensorflow/models/multilayer/MultilayerPerceptronTraining");
@@ -116,4 +116,8 @@ var Sigmoid_1 = require("./math/functions/activation/Sigmoid");
 Object.defineProperty(exports, "Sigmoid", { enumerable: true, get: function () { return Sigmoid_1.Sigmoid; } });
 var Tanh_1 = require("./math/functions/activation/Tanh");
 Object.defineProperty(exports, "Tanh", { enumerable: true, get: function () { return Tanh_1.Tanh; } });
+var OceanConnection_1 = require("./ocean/OceanConnection");
+Object.defineProperty(exports, "OceanConnection", { enumerable: true, get: function () { return OceanConnection_1.OceanConnection; } });
+var ITRMConnection_1 = require("./ai/itrm/ITRMConnection");
+Object.defineProperty(exports, "ITRMConnection", { enumerable: true, get: function () { return ITRMConnection_1.ITRMConnection; } });
 //# sourceMappingURL=index.js.map

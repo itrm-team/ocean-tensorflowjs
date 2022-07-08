@@ -44,9 +44,16 @@ class SpreadsheetConnection {
                     range: range
                 });
                 values = values.concat(data.data.values);
+                this.waitFor(1000);
             } while (limit + 1 <= args.toRow);
             return values;
         });
+    }
+    waitFor(millis) {
+        let start = Date.now(), currentDate = null;
+        do {
+            currentDate = Date.now();
+        } while (currentDate - start < millis);
     }
 }
 exports.SpreadsheetConnection = SpreadsheetConnection;

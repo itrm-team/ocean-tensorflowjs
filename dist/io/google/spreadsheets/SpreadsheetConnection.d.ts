@@ -15,4 +15,5 @@ export declare class SpreadsheetConnection {
     init(credentials: GoogleCredentials): Promise<void>;
     getSpreadsheetDetails(spreadsheetId: string): Promise<any>;
     getSheetData(args: SheetDataRequestArgs): Promise<any[]>;
+    waitFor(millis: number): void;
 }

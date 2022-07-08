@@ -1,4 +1,5 @@
 import { Function } from "../Function";
+import { Average } from "./Average";
 
 export class R2 extends Function<{ observed: number[], predictions: number[] }, number> {
     public apply(values: { observed: number[]; predictions: number[]; }): number {
@@ -6,13 +7,10 @@ export class R2 extends Function<{ observed: number[], predictions: number[] }, 
     }
 
     public static apply(observed: number[], predictions: number[]): number {
-        let avg: number = 0, ss_res: number = 0, ss_tot: number = 0;
-        for (let i = 0; i < predictions.length; i++)
-            avg += observed[i];
-        avg /= predictions.length;
+        let avg: number = Average.apply(observed), ss_res: number = 0, ss_tot: number = 0;
         for (let i = 0; i < predictions.length; i++) {
-            ss_res += Math.pow(predictions[i] - predictions[i], 2);
-            ss_tot +=  Math.pow(avg - predictions[i], 2);
+            ss_res += Math.pow(observed[i] - predictions[i], 2);
+            ss_tot +=  Math.pow(avg - observed[i], 2);
         }
         return 1.0 - (ss_res / ss_tot);
     }

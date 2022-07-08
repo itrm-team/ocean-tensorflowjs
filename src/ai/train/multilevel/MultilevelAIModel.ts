@@ -13,8 +13,4 @@ export class MultilevelAIModel<D, R, I, O> implements AIModel<D, R> {
     public async apply(input: D): Promise<R> {
         return await this.parser.restoreOutputs(await this.model.apply(await this.parser.parseInputs(input)));
     }
-
-    public save(path: string) {
-        this.model.save(path);
-    }
 }

@@ -11,11 +11,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MultilayerPerceptronTraining = void 0;
 const MultilevelSequentialTraining_1 = require("../../multilevel/MultilevelSequentialTraining");
-const MultilayerIOParser_1 = require("./MultilayerIOParser");
+const MultilayerDatasetParser_1 = require("./MultilayerDatasetParser");
 const MultiLayerPerceptronSpace_1 = require("./MultiLayerPerceptronSpace");
 class MultilayerPerceptronTraining extends MultilevelSequentialTraining_1.MultilevelSequentialTraining {
     constructor(args, goal, compile, fit, iters) {
-        super(goal, new MultilayerIOParser_1.MultilayerIOParser(args.outputs), compile, fit, iters);
+        super(goal, new MultilayerDatasetParser_1.MultilayerDatasetParser(args.outputs), compile, fit, iters);
         this.space = new MultiLayerPerceptronSpace_1.MultiLayerPerceptronSpace(args);
     }
     apply() {

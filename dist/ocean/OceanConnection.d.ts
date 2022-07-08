@@ -1,4 +1,4 @@
-import { DDO, Account } from "@oceanprotocol/lib";
+import { DDO } from "@oceanprotocol/lib";
 export declare interface OceanConfig {
     metadataCacheUri: string;
     providerUri: string;
@@ -10,7 +10,6 @@ export declare interface OceanDownloadRequest {
     serviceType: string;
     payerAddress: string;
     tokenAddress: string;
-    consumerAccount: Account;
     destination: string;
 }
 export declare class OceanConnection {

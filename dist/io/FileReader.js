@@ -11,7 +11,8 @@ class FileReader {
             fs_1.default.readFile(file, 'utf-8', function (err, info) {
                 if (err)
                     reject(err);
-                resolve(info.replace(/\r/g, '').split('\n'));
+                else
+                    resolve(info.replace(/\r/g, '').split('\n'));
             });
         });
     }

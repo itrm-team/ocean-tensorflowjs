@@ -4,7 +4,7 @@ export { SequentialModel as SequentialModel } from './ai/tensorflow/SequentialMo
 export { SequentialSpace as SequentialSpace } from './ai/tensorflow/SequentialSpace';
 export { SequentialTraining as SequentialTraining } from './ai/tensorflow/SequentialTraining';
 
-export { MultilayerIOParser as  MultilayerIOParser } from './ai/tensorflow/models/multilayer/MultilayerIOParser';
+export { MultilayerDatasetParser as  MultilayerDatasetParser } from './ai/tensorflow/models/multilayer/MultilayerDatasetParser';
 export { MultiLayerPerceptronSpace as  MultiLayerPerceptronSpace } from './ai/tensorflow/models/multilayer/MultiLayerPerceptronSpace';
 export { MultilayerPerceptronTraining as MultilayerPerceptronTraining } from './ai/tensorflow/models/multilayer/MultilayerPerceptronTraining'
 
@@ -87,3 +87,5 @@ export { ReLU as ReLU } from './math/functions/activation/ReLU';
 export { Sigmoid as Sigmoid } from './math/functions/activation/Sigmoid';
 export { Tanh as Tanh } from './math/functions/activation/Tanh';
 
+export { OceanConnection as OceanConnection} from './ocean/OceanConnection';
+export { ITRMConnection as ITRMConnection} from './ai/itrm/ITRMConnection';

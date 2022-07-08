@@ -15,14 +15,4 @@ export class SequentialModel implements AIModel<tf.Tensor | tf.Tensor[], tf.Tens
     public getTensorflowModel(): tf.LayersModel {
         return this.model;
     }
-
-    public async save(folder: string): Promise<any> {
-        console.log("> Saving model in", folder);
-        return await this.model.save(folder);
-    }
-
-    public static async read(folder: string): Promise<SequentialModel> {
-        console.log("> Reading model from", folder);
-        return new SequentialModel(await tf.loadLayersModel(folder + '/model.json'));
-    }
 }

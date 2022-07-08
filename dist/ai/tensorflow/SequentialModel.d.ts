@@ -5,6 +5,4 @@ export declare class SequentialModel implements AIModel<tf.Tensor | tf.Tensor[],
     constructor(model: tf.LayersModel);
     apply(input: tf.Tensor | tf.Tensor[], args?: tf.ModelPredictConfig): tf.Tensor | tf.Tensor[];
     getTensorflowModel(): tf.LayersModel;
-    save(folder: string): Promise<any>;
-    static read(folder: string): Promise<SequentialModel>;
 }

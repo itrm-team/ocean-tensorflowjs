@@ -1,3 +1,4 @@
+import { waitForDebugger } from "inspector";
 import { GoogleAPIConnection, GoogleCredentials } from "../GoogleAPIConnection";
 
 export declare interface SheetDataRequestArgs {
@@ -44,7 +45,13 @@ export class SpreadsheetConnection {
                 range: range
             });
             values = values.concat(data.data.values);
+            this.waitFor(1000);
         } while (limit + 1 <= args.toRow);
         return values;
+    }
+
+    waitFor(millis: number) {
+        let start = Date.now(), currentDate = null;
+        do { currentDate = Date.now(); } while (currentDate - start < millis);
     }
 }

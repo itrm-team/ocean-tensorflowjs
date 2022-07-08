@@ -5,5 +5,4 @@ export declare class MultilevelAIModel<D, R, I, O> implements AIModel<D, R> {
     parser: DataParser<D, R, I, O>;
     constructor(model: AIModel<I, O>, parser: DataParser<D, R, I, O>);
     apply(input: D): Promise<R>;
-    save(path: string): void;
 }

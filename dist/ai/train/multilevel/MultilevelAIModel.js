@@ -20,9 +20,6 @@ class MultilevelAIModel {
             return yield this.parser.restoreOutputs(yield this.model.apply(yield this.parser.parseInputs(input)));
         });
     }
-    save(path) {
-        this.model.save(path);
-    }
 }
 exports.MultilevelAIModel = MultilevelAIModel;
 //# sourceMappingURL=MultilevelAIModel.js.map
